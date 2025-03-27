@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register-Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="main">
+        <div class="container">
+            <h2>Create Account :</h2>
+            <form id="registrationForm" class="form">
+
+                <label for="name">Username :</label><br>
+                <input type="text" name="name" pattern="[a-zA-Z]{4,}"title="user atleat 4 chars" required id="username"><br>
+
+                <label for="name">Email:</label><br>
+                <input pattern="[a-zA-Z0-9]+@[a-z]+[\.][a-z]{2,}" required id="useremail"><br>
+
+                <label for="name">Password :</label><br>
+                <input type="password" name="password" pattern="[a-zA-Z0-9]{6,}" title="enter 6 char's password" required id="userpassword"><br>
+
+                <button class="submit-btn" type="submit">Create Account</button>
+            </form>
+
+        </div>
+    </div>
+    <script>
+        // document.getElementById("registrationForm").addEventListener('submit', function (event) {
+        //     event.preventDefault();
+
+
+        //     var username = document.getElementById('username').value;
+        //     var useremail = document.getElementById('useremail').value;
+        //     var userpassword = document.getElementById('userpassword').value;
+
+
+
+        //     if (localStorage.getItem(useremail)) {
+        //         alert("You already have an account.");
+        //         window.location.href = "4.login-page.html";
+        //     }
+        //     else {
+        //         const userDetails = {
+        //             username: username,
+        //             useremail: useremail,
+        //             userpassword: userpassword
+        //         };
+        //         localStorage.setItem(useremail, JSON.stringify(userDetails));
+
+        //         alert("Registration successful!");
+        //         window.location.href = "4.login-page.html";
+        //     }
+        // });
+
+        function getUsersData() {
+            const usersData = localStorage.getItem('users');
+            return usersData ? JSON.parse(usersData) : [];
+        }
+
+        // Function to save updated users data to localStorage
+        function saveUsersData(users) {
+            localStorage.setItem('users', JSON.stringify(users));
+        }
+
+        // Event listener for the registration form submission
+        document.getElementById("registrationForm").addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            var username = document.getElementById('username').value;
+            var useremail = document.getElementById('useremail').value;
+            var userpassword = document.getElementById('userpassword').value;
+
+            // Get all users from localStorage
+            var users = getUsersData();
+
+            // Check if the email already exists
+            var existingUser = users.find(user => user.useremail === useremail);
+
+            if (existingUser) {
+                alert("You already have an account.");
+                window.location.href = "4.login-page.html";
+            } else {
+                const userDetails = {
+                    username: username,
+                    useremail: useremail,
+                    userpassword: userpassword
+                };
+
+                // Add new user to users array
+                users.push(userDetails);
+
+                // Save updated users array back to localStorage
+                saveUsersData(users);
+
+                alert("Registration successful!");
+                window.location.href = "4.login-page.html";
+            }
+        });
+
+    </script>
+</body>
+
+</html>
