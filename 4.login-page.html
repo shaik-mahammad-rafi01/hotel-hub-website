@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <div class="main">
+        <div class="container">
+            <h2>Login :</h2>
+
+            <form id="loginForm">
+                <label for="email">Email:</label><br>
+                <input type="email" name="email" required id="email"><br>
+
+                <label for="password">Password :</label><br>
+                <input type="password" name="password" required id="password"><br>
+
+                
+                <button class="submit" type="submit" id="login">Login</button>
+            </form>
+
+        </div>
+    </div>
+
+    <script>
+        
+        // document.getElementById('loginForm').addEventListener('submit', function (event) {
+        //     event.preventDefault(); 
+        //     var userEmail = document.getElementById('email').value;
+        //     var userPassword = document.getElementById('password').value;
+
+        //     if (userEmail && userPassword) {
+        //         var lsData = localStorage.getItem(userEmail);
+
+        //         if (lsData) {
+        //             lsData = JSON.parse(lsData);
+
+        //             if (userEmail === lsData.useremail && userPassword === lsData.userpassword) {
+        //                 alert("Login successful");
+        //                 localStorage.setItem("currentUser",lsData.username);
+        //                 window.location.href = "5.home-page.html";  
+        //             } else {
+        //                 alert("Username and password are incorrect");
+        //             }
+
+        //         } else {
+        //             alert("Please register first before logging in");
+        //             window.location.href = "3.register-page.html"; 
+        //         }
+
+        //     } else {
+        //         alert("Please enter both email and password");
+        //     }
+        // });
+
+        document.getElementById('loginForm').addEventListener('submit', function (event) {
+            event.preventDefault(); 
+            var userEmail = document.getElementById('email').value;
+            var userPassword = document.getElementById('password').value;
+
+            if (userEmail && userPassword) {
+                // Get the list of all users from localStorage
+                var users = JSON.parse(localStorage.getItem('users')) || [];
+
+                // Check if the email exists in the users array
+                var user = users.find(u => u.useremail === userEmail);
+
+                if (user) {
+                    // If user found, check if password matches
+                    if (userPassword === user.userpassword) {
+                        alert("Login successful");
+                        localStorage.setItem("currentUser", user.username);
+                        window.location.href = "5.home-page.html";  
+                    } else {
+                        alert("Username and password are incorrect");
+                    }
+                } else {
+                    alert("Please register first before logging in");
+                    window.location.href = "3.register-page.html"; 
+                }
+
+            } else {
+                alert("Please enter both email and password");
+            }
+        });
+    </script>
+</body>
+
+</html>
