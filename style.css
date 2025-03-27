@@ -1,0 +1,272 @@
+/* first-page */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+.background {
+    height: 100vh; 
+    width: 100vw;
+    background-color: rgb(255, 242, 227);
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    /* align-items:;  */
+    
+    text-align: center;
+    padding: 20px;
+    min-width: 500px; 
+}
+.name-container {
+    width: 50%;
+    text-align: left; 
+    margin-right: 5px;
+}
+.image-container {
+    width: 50%;
+    display: flex;
+    justify-content: center; 
+}
+.img {
+    /* height: 400px;  */
+    /* width: 400px;  */
+    border-radius: 50%; 
+    /* object-fit: cover;  */
+    min-width: 80px;
+    max-width: 500px;
+    border: 1px solid black;
+    padding: 3px ;
+
+}
+.main1{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    /* margin-top: 200px; */
+    text-align: center;
+    align-items: center;
+    padding: 20px;
+}
+.btn{
+    margin-top: 0;
+    display: flex;
+    margin-top: 100px;
+}
+.get-btn{
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    background-color: #c2804a;
+    color: white;
+    width: 150px;
+}
+.heading{
+    color: #5e3319;
+    font-size: 60px;
+}
+.offer{
+    color: #c47e49;
+    font-size: 30px;
+}
+
+.btn1{
+    text-decoration: none;
+    background-color: #5e3319;
+    padding: 15px 40px;
+    color: white;
+    border-radius: 10px;
+}
+
+/* 2nd page  */
+
+.main-container{
+    height: 60vh;
+    background-color: rgb(255, 242, 227);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.text-container{
+    /* height: 50vh; */
+    background-color: red;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 20px;
+}
+.card-container{
+    height: 40vh;
+    background-color: #5e3319;
+    border-radius: 50px 50px 0px 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+   
+}
+h1{
+    display: flex;
+    justify-content: center;
+    color: #5e3319;
+}
+button{
+    padding: 10px;
+    margin: 10px;
+   
+}
+a{
+    background-color:#5e3319;
+    color: rgb(246, 242, 242);
+    font-size: 17px;
+    text-decoration: none;
+}
+a:active{
+    color: black;
+}
+.create-acc-btn{
+    border: 1px solid;
+
+}
+.create-acc-btn:hover{
+    background-color: antiquewhite;
+    color: black;
+}
+
+/* 3rd page */
+
+.main {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 20vh;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 50vh;
+    width: 40vw;
+    padding: 40px;
+    background-color:#5e3319 ;
+    border-radius: 30px;
+}
+
+a {
+    display: inline-block;
+    color: white;
+    padding: 5px;
+    text-decoration: none;
+    background-color: #5e3319;
+    text-align: center;
+    margin-top: 20px;
+}
+
+h2 {
+    margin-bottom: 10px;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    background-color: #5e3319;
+    
+    
+}
+input{
+    background-color: white;
+    height: 28px;
+    border-radius: 5px;
+    border-width: 1px;
+}
+.submit-btn{
+    margin-top: 20px;
+    height: 40px;
+    border-radius: 20px;
+    border-width: 1px;
+    border: 1px solid;
+}
+.submit-btn:hover{
+    background-color: #e5bba1;
+    color: white;
+    
+}
+label{
+    background-color: #5e3319;
+    
+}
+h2{
+    background-color: #5e3319;
+    color: white;
+}
+
+/* 4th page  */
+
+
+
+.main {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 20vh;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    /* height: 50vh; */
+    width: 40vw;
+    padding: 40px;
+    background-color:#5e3319;
+    border-radius: 30px;
+    padding-bottom: 100px;
+    padding: 50px;
+}
+
+button {
+    display: inline-block;
+    color: white;
+    padding: 10px 20px;
+    background-color: #5e3319;
+    text-align: center;
+    margin-top: 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 15px;
+}
+
+h2 {
+    color: white;
+    margin-bottom: 10px;
+    background-color: #5e3319;
+}
+#loginForm{
+    display: flex;
+    flex-direction: column;
+}
+
+#login{
+    margin-top: 60px;
+    background-color:bisque;
+    color: black;
+    
+}
+input{
+    height: 27px;
+    background-color: white;
+    padding: 2px;
+    border-radius: 10px;
+    border-width: 1px;
+    padding-left: 10px;
+}
+form{
+    background-color: #5e3319;
+}
+label{
+    background-color: #5e3319;
+    color: white;
+}
+
+
+/* 5th page  */
+
